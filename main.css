@@ -27,3 +27,20 @@ input{
   box-sizing: border-box;
   font-size: 15px;
 }
+
+#details{
+  position: absolute;
+  bottom:20px;
+  right:10px;
+  z-index: 999;
+  font-size: 15px;
+}
+
+#author{
+  position: absolute;
+  bottom:20px;
+  left:10px;
+  z-index: 999;
+  font-size: 15px;
+  background-color: aliceblue;
+}
