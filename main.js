@@ -7,7 +7,7 @@ searchCountry = () =>{
  mymap.setView(countryCodes.filter((c)=> c.name.toLowerCase() == country.toLowerCase())[0].latlng,6);
 }
 
- blah = async () => {
+blah = async () => {
   await fetch('https://ashikpaul.github.io/CountriesJson/countryCodes.json')
   .then(response => response.json())
   .then(data => {
@@ -44,7 +44,7 @@ showCountries = async (countries) => {
     await fetch('https://api.covid19api.com/total/country/'+countries[coun].Slug)
       .then(response => response.json())
       .then(data => {
-        if(data.length)          
+        if(data.length){         
           L.circle(countryCodes.filter((c)=> c.country_code == countries[coun].ISO2)[0].latlng, data[data.length -1].Recovered, {
             color: 'darkgreen',
             fillColor: '#90EE90',
@@ -65,6 +65,7 @@ showCountries = async (countries) => {
           }).on('mouseout', function (e) {
             this.closePopup();
           });
+        }
       });
   }
 };
